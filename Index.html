@@ -6,7 +6,45 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
-
+  <style>
+    .news-tab {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+    .news-tab a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .news-tab a:hover {
+      background-color: #555;
+    }
+    .news-content {
+      padding: 20px;
+    }
+    .news-article {
+      margin-bottom: 20px;
+    }
+    .news-article h2 {
+      color: #333;
+    }
+    .news-article p {
+      color: #555;
+    }
+    table, th, td {
+  border: 1px solid black;
+    }
+    td{
+      font-size: 20px;
+    }
+    th{
+      font-size:22px;
+    }
+  </style>
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
@@ -47,6 +85,90 @@
         </div>
       </nav>
     </header>
-    <h1>News</h1>
+    <main>
+      <h1>News</h1>
+        <div class="news-content">
+          <div class="news-article">
+            <h2>New Arena Being Built!</h2>
+            <p>
+              There is a new upcoming Arena starting development in 2024 in the
+              BridgeWater Forest area.<br />
+              This arena will be part of a sports complex with a pool and so
+              much more.
+            </p>
+          </div>
+          <div class="news-article">
+            <h2>Winnipeg Jets on a hot streak</h2>
+            <p>
+              The Winnipeg jets are on a hot streak being first in the league
+              currently and winning their last<br />
+              7 games in a row without a regular time loss in the last 13 games
+              . 
+            </p>
+            
+          </div>
+          <div class="news-article">
+            <h2>U18 A2 A won their last 3 games!</h2>
+            <p>
+              The South Winnipeg Kings U18 A2 A won their last 3 games at
+              opponents arenas across winnipeg <br />and one game at their home
+              arena in st Norbert. They hop to continue this awesome streak into
+              the <br />playoffs in March
+            </p>
+          </div>
+          <h1>Upcoming games</h1>
+          <table>
+            <tr>
+              <th>Location</td>
+              <th>Time</th>
+              <th>Day</th>
+              <th>Home Team</th>
+              <th>Away Team</th>
+              <th>League</th>
+            </tr>
+            <tr>
+              <td>Ice plex</td>
+              <td>12:30</td>
+              <td>January 28th</td>
+              <td>Winterhawks</td>
+              <td>Kings</td>
+              <td>U13 A2 A</td>
+            </tr>
+            <tr>
+              <td>Richmond Arena</td>
+              <td>1:00</td>
+              <td>January 28th</td>
+              <td>Kings</td>
+              <td>Flyers</td>
+              <td>U15 A3</td>
+            </tr>
+            <tr>
+              <td>St Norbert</td>
+              <td>2:00</td>
+              <td>January 28th</td>
+              <td>Kings</td>
+              <td>Lazers</td>
+              <td>U11 A1 B</td>
+            </tr>
+            <tr>
+              <td>Century Arena</td>
+              <td>2:15</td>
+              <td>January 28th</td>
+              <td>Flyers</td>
+              <td>Kings</td>
+              <td>U11 A2 1</td>
+            </tr>
+            <tr>
+              <td>St Norbert</td>
+              <td>2:30</td>
+              <td>January 28th</td>
+              <td>Kings</td>
+              <td>Rockets</td>
+              <td>U11 A2 1</td>
+            </tr>
+          </table>
+        </div>
+      
+    </main>
   </body>
 </html>
