@@ -6,14 +6,24 @@
     <title>Payroll</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
-
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    td{
+      font-size: 20px;
+    }
+    th{
+      font-size:22px;
+    }
+  </style>
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
       <div>
         <a href="Index.html">
           <img
-            src="Images/GOALLINE_Logo 3.0.jpeg"
+            src="Images/GOALLINE_Logo 4.jpeg"
             style="height: 70px; width: 300px"
           />
         </a>
@@ -48,7 +58,73 @@
       </nav>
     </header>
     <main>
-      <h1>Payroll</h1>
+      <h1 style="text-align: center;">Payroll</h1>
+      <div style="display: flex;justify-content: center;">
+      <div>
+      <table>
+            <tr>
+              <th>Date</td>
+              <th>League</th>
+              <th>Location</th>
+              <th>Role</th>
+              <th>Pay</th>
+              <th>Alterations</th>
+            </tr>
+            <tr>
+              <td>22-Oct-2023</td>
+              <td>U9 HL-Regular</td>
+              <td>Oak Bluff</td>
+              <td>Timekeeper</td>
+              <td>$20.00</td>
+              <td style="color: red;">$0.00</td>
+            </tr>
+            <tr>
+              <td>28-Oct-2023</td>
+              <td>Male U9 A1-Regular</td>
+              <td>St Norbert</td>
+              <td>Timekeeper</td>
+              <td>$20.00</td>
+              <td style="color: red;">$0.00</td>
+            </tr>
+            <tr>
+              <td>28-Oct-2023</td>
+              <td>Female U9 A1-Regular</td>
+              <td>St Norbert</td>
+              <td>Timekeeper</td>
+              <td>$20.00</td>
+              <td style="color: red;">$0.00</td>
+            </tr>
+            <tr>
+              <td>10-Dec-2023</td>
+              <td>Male U11 A2a-Regular</td>
+              <td>St Norbert</td>
+              <td>Timekeeper</td>
+              <td>$21.00</td>
+              <td style="color: red;">$0.00</td>
+            </tr>
+            <tr>
+              <td>10-Dec-2023</td>
+              <td>Male U11 A2a-Regular</td>
+              <td>St Norbert</td>
+              <td>Timekeeper</td>
+              <td>$21.00</td>
+              <td style="color: red;">$0.00</td>
+            </tr>
+            <tr bgcolor="yellow">
+              <td colspan="4">
+                Pay Total
+              </td>
+              <td>$102.00</td>
+              <td>$0.00</td>
+            </tr>
+            <tr bgcolor="yellow">
+              <td colspan="4">Grand Total</td>
+              <td colspan="2" align="right">$102.00</td>
+            </tr>
+          </table>
+          </div>
+          </div>
+      
     </main>
   </body>
 </html>
