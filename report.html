@@ -6,7 +6,51 @@
     <title>Create Incident Report</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
 
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #00084f;
+    }
+  </style>
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
@@ -20,7 +64,7 @@
       </div>
       <!-- nav links
       Link to the home page -->
-      <nav style="padding: 0px">
+      <nav style="padding: 0px; margin: 0px">
         <!-- Link to  -->
         <a href="Confirm.html" alt="The link to">Confirm Pending Assignments</a>
         <!-- Link to -->
@@ -47,5 +91,74 @@
         </div>
       </nav>
     </header>
+    <form action="submit.html" method="post">
+      <h2>Hockey Incident Report Form</h2>
+
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" required />
+
+      <label for="team1"> Home Team:</label>
+      <input type="text" id="team1" name="team1" required />
+
+      <label for="team2">Away Team:</label>
+      <input type="text" id="team2" name="team2" required />
+
+      <label for="num">Number:</label>
+      <input type="text" id="num" name="num" required />
+
+      <label for="ref"> Referee:</label>
+      <input type="text" id="ref" name="ref" />
+
+      <label for="line1">Linesmen: </label>
+      <input type="text" id="line1" name="line1" required />
+
+      <label for="line2">Linesmen: </label>
+      <input type="text" id="line2" name="line2" required />
+
+      <label for="league">League:</label>
+      <input type="text" id="league" name="league" required />
+
+      <label for="time1">Time:</label>
+      <input type="time" id="time1" name="time1" required />
+
+      <label for="day1">Day:</label>
+      <input type="date" id="day1" name="day1" required />
+
+      <label for="location">Location:</label>
+      <select id="location" name="location" required>
+        <option value="Location">Location</option>
+        <option value="Allard">Allard Arena</option>
+        <option value="Canada Life">Canada Life Center</option>
+        <option value="Canlan">Canlan</option>
+        <option value="Century">Century Arena</option>
+        <option value="Charles">Charles Barbour Arena</option>
+        <option value="Dutton">Dutton Memorial Arena</option>
+        <option value="Hockey">Hockey For All Center</option>
+        <option value="Max Bell">Max Bell Arena</option>
+        <option value="Oak">Oak Bluff Arena</option>
+        <option value="Richmond">Richmond Arena</option>
+        <option value="Sam South">Sam Southern Arena</option>
+        <option value="St Norbert">St Norbert Arena</option>
+        <option value="The Rink">The Rink</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="incident-type">Incident Type:</label>
+      <select id="incident-type" name="incident-type" required>
+        <option value="fight">Fight</option>
+        <option value="injury">Injury</option>
+        <option value="misconduct">Misconduct</option>
+      </select>
+
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required
+      ></textarea>
+
+      <button type="submit">Submit Incident Report</button>
+    </form>
   </body>
 </html>

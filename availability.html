@@ -6,7 +6,46 @@
     <title>Availability</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .time-selector {
+      display: none;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .available-times {
+      margin-top: 10px;
+    }
+    .selected-day {
+      background-color: #aaf;
+    }
+  </style>
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
@@ -47,5 +86,127 @@
         </div>
       </nav>
     </header>
+    <h2>Availability Calendar</h2>
+
+    <div id="calendar-container"></div>
+
+    <div class="time-selector" id="time-selector">
+      <label>Select available times:</label>
+      <div id="times-checkboxes">
+        <label><input type="checkbox" value="7am" />7:00 AM</label>
+        <label><input type="checkbox" value="8am" />8:00 AM</label>
+        <label><input type="checkbox" value="9am" />9:00 AM</label>
+        <label><input type="checkbox" value="10am" />10:00 AM</label>
+        <label><input type="checkbox" value="11am" />11:00 AM</label>
+        <label><input type="checkbox" value="12pm" />12:00 PM</label>
+        <label><input type="checkbox" value="1pm" />1:00 PM</label>
+        <label><input type="checkbox" value="2pm" />2:00 PM</label>
+        <label><input type="checkbox" value="3pm" />3:00 PM</label>
+        <label><input type="checkbox" value="4pm" />4:00 PM</label>
+        <label><input type="checkbox" value="5pm" />5:00 PM</label>
+        <label><input type="checkbox" value="6pm" />6:00 PM</label>
+        <label><input type="checkbox" value="7pm" />7:00 PM</label>
+        <label><input type="checkbox" value="8pm" />8:00 PM</label>
+        <label><input type="checkbox" value="9pm" />9:00 PM</label>
+        <label><input type="checkbox" value="10pm" />10:00 PM</label>
+      </div>
+      <button onclick="submitAvailability()">Submit Availability</button>
+      <div class="available-times" id="available-times"></div>
+      <div class="selected-dates" id="selected-dates"></div>
+    </div>
+
+    <script>
+      const availabilityData = {};
+
+      function generateCalendar() {
+        const calendarContainer = document.getElementById("calendar-container");
+        const daysInMonth = 31;
+        const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+        let tableHTML = "<table>";
+        tableHTML += "<tr>";
+        for (const day of weekdays) {
+          tableHTML += `<th>${day}</th>`;
+        }
+        tableHTML += "</tr>";
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dayOfWeek = new Date(2024, 0, day).getDay();
+          if (dayOfWeek === 1 || day === 1) {
+            tableHTML += "<tr>";
+          }
+          tableHTML += `<td><button onclick="selectDate(${day})">${day}</button></td>`;
+          if (dayOfWeek === 0) {
+            tableHTML += "</tr>";
+          }
+        }
+
+        tableHTML += "</table>";
+        calendarContainer.innerHTML = tableHTML;
+      }
+
+      function selectDate(day) {
+        const timeSelector = document.getElementById("time-selector");
+        timeSelector.style.display = "block";
+        timeSelector.dataset.selectedDay = day;
+        updateAvailableTimes();
+      }
+
+      function submitAvailability() {
+        const selectedDay =
+          document.getElementById("time-selector").dataset.selectedDay;
+        const selectedTimes = Array.from(
+          document.querySelectorAll("#times-checkboxes input:checked")
+        ).map((checkbox) => checkbox.value);
+
+        if (!availabilityData[selectedDay]) {
+          availabilityData[selectedDay] = [];
+        }
+
+        availabilityData[selectedDay] = selectedTimes;
+
+        // Display available times and selected dates
+        updateAvailableTimes();
+        updateSelectedDates();
+
+        console.log(
+          `Availability for day ${selectedDay}: ${availabilityData[selectedDay]}`
+        );
+      }
+
+      function updateAvailableTimes() {
+        const selectedDay =
+          document.getElementById("time-selector").dataset.selectedDay;
+        const availableTimes = availabilityData[selectedDay] || [];
+        const availableTimesContainer =
+          document.getElementById("available-times");
+
+        if (availableTimes.length > 0) {
+          availableTimesContainer.innerHTML = `Available Times: ${availableTimes.join(
+            ", "
+          )}`;
+        } else {
+          availableTimesContainer.innerHTML = "";
+        }
+      }
+
+      function updateSelectedDates() {
+        const selectedDatesContainer =
+          document.getElementById("selected-dates");
+        const selectedDates = Object.entries(availabilityData)
+          .filter(([day, times]) => times.length > 0)
+          .map(([day, times]) => `Day ${day}: ${times.join(", ")}`);
+
+        if (selectedDates.length > 0) {
+          selectedDatesContainer.innerHTML = `Selected Dates and Times: ${selectedDates.join(
+            "<br>"
+          )}`;
+        } else {
+          selectedDatesContainer.innerHTML = "";
+        }
+      }
+
+      generateCalendar();
+    </script>
   </body>
 </html>
