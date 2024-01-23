@@ -110,6 +110,7 @@
         <label><input type="checkbox" value="9pm" />9:00 PM</label>
         <label><input type="checkbox" value="10pm" />10:00 PM</label>
       </div>
+      <p>Double check availability before submitting</p>
       <button onclick="submitAvailability()">Submit Availability</button>
       <div class="available-times" id="available-times"></div>
       <div class="selected-dates" id="selected-dates"></div>
@@ -151,7 +152,7 @@
         timeSelector.dataset.selectedDay = day;
         updateAvailableTimes();
       }
-
+      // used to submit the updated availability
       function submitAvailability() {
         const selectedDay =
           document.getElementById("time-selector").dataset.selectedDay;
@@ -173,14 +174,14 @@
           `Availability for day ${selectedDay}: ${availabilityData[selectedDay]}`
         );
       }
-
+      // Allows you to select the days
       function updateAvailableTimes() {
         const selectedDay =
           document.getElementById("time-selector").dataset.selectedDay;
         const availableTimes = availabilityData[selectedDay] || [];
         const availableTimesContainer =
           document.getElementById("available-times");
-
+        // if else statement to see the selected times
         if (availableTimes.length > 0) {
           availableTimesContainer.innerHTML = `Available Times: ${availableTimes.join(
             ", "
@@ -189,7 +190,7 @@
           availableTimesContainer.innerHTML = "";
         }
       }
-
+      // used to update the availability at the bottom
       function updateSelectedDates() {
         const selectedDatesContainer =
           document.getElementById("selected-dates");

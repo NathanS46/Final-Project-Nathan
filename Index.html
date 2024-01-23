@@ -7,21 +7,11 @@
     <link rel="stylesheet" href="css/css.css" />
   </head>
   <style>
+    /* start of internal style sheet */
     .news-tab {
       display: flex;
-      justify-content: space-around;
-      background-color: #333;
       color: #fff;
       padding: 10px;
-    }
-    .news-tab a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .news-tab a:hover {
-      background-color: #555;
     }
     .news-content {
       padding: 20px;
@@ -29,12 +19,7 @@
     .news-article {
       margin-bottom: 20px;
     }
-    .news-article h2 {
-      color: #333;
-    }
-    .news-article p {
-      color: #555;
-    }
+    /* Used to make border around table */
     table, th, td {
       border: 1px solid black;
     }
@@ -45,6 +30,7 @@
       font-size:22px;
     }
   </style>
+  <!-- end of the style -->
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
@@ -59,12 +45,12 @@
       <!-- nav links
       Link to the home page -->
       <nav style="padding: 0px">
-        <!-- Link to  -->
-        <a href="Confirm.html" alt="The link to">Confirm Pending Assignments</a>
-        <!-- Link to -->
-        <a href="assignments.html" alt="The link to ">View Assignments</a>
-        <!-- Link to  -->
-        <a href="availability.html" alt="The link to ">Set Availability</a>
+        <!-- Link to confirm page -->
+        <a href="Confirm.html" alt="The link to Confirm availability page" style=>Confirm Pending Assignments</a>
+        <!-- Link to assignment page -->
+        <a href="assignments.html" alt="The link to assignment page">View Assignments</a>
+        <!-- Link to availability page -->
+        <a href="availability.html" alt="The link to availability page">Set Availability</a>
         <div class="dropdown" style="font-size: 20px; padding-right: 100px">
           <button class="dropbtn">
             <img
@@ -78,6 +64,7 @@
             class="dropdown-content"
             style="font-size: 20px; padding-left: 2%"
           >
+          <!-- dropdown links  -->
             <a href="report.html">Create Incident report</a>
             <a href="evaluations.html">Evaluations</a>
             <a href="payroll.html">Payroll</a>
@@ -85,6 +72,7 @@
         </div>
       </nav>
     </header>
+    <!-- main part of the page -->
     <main>
       <h1>News</h1>
         <div class="news-content">
@@ -115,6 +103,7 @@
               the <br />playoffs in March
             </p>
           </div>
+          <!-- Table showing upcoming games -->
           <h1>Upcoming games</h1>
           <table>
             <tr>
@@ -171,6 +160,7 @@
     </main>
 
   </body>
+  <!-- end of the body and the start of the footer  -->
       <footer
       style="
       background-color: #00084f;
@@ -182,3 +172,4 @@
     <p> <a href="http://site6009.goalline.ca/">Link to Goalline</a> (must log in to see the part I recreated)</p>
     </footer>
 </html>
+<!-- end of the page -->

@@ -6,7 +6,20 @@
     <title>Confirm Pending Assignments</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
-  <style></style>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+    .box {
+      width: 1450px;
+      height: 400px;
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
   <body>
     <header>
       <!-- this header contains the main points at the top of the page like the nav bar and title-->
@@ -48,13 +61,59 @@
       </nav>
     </header>
     <h1>Confirm Pending Assignments</h1>
-    <table>
-      <tr>
-        <th>Role</th>
-        <th>Date</th>
-        <th>Time</th>
-      </tr>
-    </table>
+    <div class="box">
+      <table>
+        <tr>
+          <th>Role</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Arena</th>
+          <th>Home Team</th>
+          <th>Away Team</th>
+          <th>Pay</th>
+          <th>League</th>
+          <th>Referee 1</th>
+          <th>Linesmen 1</th>
+          <th>Linesmen 2</th>
+          <th>Timekeeper</th>
+          <th>Accept</th>
+          <th>Decline</th>
+        </tr>
+        <tr>
+          <td>Timekeeper</td>
+          <td>Febuary 5th</td>
+          <td>12:30</td>
+          <td>St Norbert</td>
+          <td>Kings</td>
+          <td>Flyers</td>
+          <td>$21.00</td>
+          <td>U11 A1 b</td>
+          <td>Adam Boissoneault</td>
+          <td>Janay Patel</td>
+          <td>Joe Jones</td>
+          <td>John Doe</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td>Timekeeper</td>
+          <td>Febuary 5th</td>
+          <td>1:45</td>
+          <td>St Norbert</td>
+          <td>Storm</td>
+          <td>Hawks</td>
+          <td>$21.00</td>
+          <td>U11 A1 b</td>
+          <td>Adam Boissoneault</td>
+          <td>Janay Patel</td>
+          <td>Joe Jones</td>
+          <td>John Doe</td>
+          <td><input type="checkbox" /></td>
+          <td><input type="checkbox" /></td>
+        </tr>
+      </table>
+      <p>Update availability for more games...</p>
+    </div>
   </body>
   <footer
     style="
